@@ -1,0 +1,170 @@
+/* Importing the header and navigation styles from index.css */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    overflow: hidden;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-container {
+    margin: 0 10px;
+}
+
+.nav-link {
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: var(--text);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    margin-left: 10px;
+}
+
+.nav-link:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.donate-link {
+    background-color: #e83b3b;
+    color: white;
+    border-color: #e83b3b;
+}
+
+.donate-link:hover {
+    background-color: #c52e2e;
+    border-color: #c52e2e;
+}
+
+header #logo img {
+    width: 40px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+/* Main section styling with grid background */
+#main:before {
+    --size: 45px;
+    --line: color-mix(in lch, var(--gridlines), transparent 80%);
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: 
+        linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size) ) 50% 50% / var(--size) var(--size),
+        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+    mask: linear-gradient(20deg, transparent 50%, white);
+    top: 0;
+    left: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#main {
+    margin-bottom: 12vh;
+    position: relative;
+}
+
+/* Links page specific styling */
+#links-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.links-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.links-header h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    color: var(--serious-text);
+}
+
+.links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.link-button {
+    width: 100%;
+    max-width: 400px;
+}
+
+.link-button a {
+    width: 100%;
+    justify-content: center;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.link-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
+}
+
+.link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-icon svg {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.link-icon img {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+#attention-line {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+#attention-line img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .links-grid {
+        padding: 0 1rem;
+    }
+    
+    .link-button {
+        width: 100%;
+    }
+}
