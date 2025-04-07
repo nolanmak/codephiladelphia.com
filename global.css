@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+:root {
+    --background: #E9E3DC;
+    --gridlines: #7E7E73;
+
+    --serious-text: #121212;
+    --whimsy-text: #3B2521;
+    --contrast-text: #FEFEFE;
+
+    --accent: #59969B;
+
+    --button: #3B2521;
+
+    /* i <3 quarks */
+    --up: #B4A79C;
+    --down: #D1C9C2;
+    --charm: #272140;
+    --strange: #212121;
+    --top: #D9D9D9;
+    --bottom: #214026;
+
+
+    --selection: lightblue;
+    --link: #278a93;
+    
+    --hero-border: #7E7E7E;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Vollkorn', serif;
+    background-color: var(--background);
+    color: var(--whimsy-text);
+}
+
+
+/* overrides */
+a { color: var(--link); text-decoration: underline 1px dotted; }
+a:hover {  text-decoration: underline 2px; }
+::selection { background-color: var(--selection); }
+img { user-select: none; }
+p { line-height: 1.5rem; }
+
+/* styles */
+.serious { color: var(--serious-text); }
+.whimsy { color: var(--whimsy-text); }
+.contrast { color: var(--contrast-text); }
+.serif { font-family: 'Vollkorn', serif; }
+.mono { font-family: 'Space Mono', monospace; }
+.handwriting { font-family: 'Gloria Hallelujah', sans-serif; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.no-select { user-select: none; }
+.no-pointer { pointer-events: none; }
+
+/* doodads */
+
+/* a.button */
+.button {
+    display: flex;
+}
+.button > a {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    background-color: var(--button);
+    color: var(--contrast-text);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    user-select: none;
+}
+
+.button:not(:hover) > a {
+    transform: translateY(0);
+}
+.button:hover > a {
+    transform: translate(0, -8px);
+    text-decoration: none;
+}
+
+/* mobile */
+@media (max-width: 600px) { .hide-mobile { display: none; } }

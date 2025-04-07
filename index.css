@@ -1,0 +1,318 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    overflow: hidden;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-container {
+    margin: 0 10px;
+}
+
+.nav-link {
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: var(--text);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    margin-left: 10px;
+}
+
+.nav-link:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.donate-link {
+    background-color: #e83b3b;
+    color: white;
+    border-color: #e83b3b;
+}
+
+.donate-link:hover {
+    background-color: #c52e2e;
+    border-color: #c52e2e;
+}
+
+header #logo img {
+    width: 40px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+#main:before {
+    --size: 45px;
+    --line: color-mix(in lch, var(--gridlines), transparent 80%);
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: 
+        linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size) ) 50% 50% / var(--size) var(--size),
+        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+    mask: linear-gradient(20deg, transparent 50%, white);
+    top: 0;
+    left: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: 0;
+}
+#main {margin-bottom: 12vh;}
+
+#hero-container {
+    position: relative;
+    width: min(50%, 400px);
+    margin: 3rem;
+    padding: 2rem;
+    height: 200px; /* Fixed height container */
+}
+
+.draggable {
+    position: absolute;
+    width: 80%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border: 1px solid var(--hero-border);
+    border-radius: 0.5em;
+    filter: drop-shadow(-4px 8px 3px rgba(0, 0, 0, 0.25));
+    cursor: move;
+    touch-action: none; /* Prevents scrolling while dragging on touch devices */
+}
+
+.draggable:nth-child(1) { transform: rotate(-12deg); top: 0%; left: 0%; }
+.draggable:nth-child(2) { transform: rotate(0deg); top: 25%; left: 15%; }
+.draggable:nth-child(3) { transform: rotate(5deg); top: 40%; left: 0%; }
+
+/* splash text */
+
+#splash h1 { text-align: center; font-weight: 300; margin: 0em;}
+#splash p { text-align: center;}
+#splash .button { justify-content: center; }
+
+#splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1em 0 1em;
+}
+
+/* more info section */
+#about {
+    margin-top: 10em;
+}
+
+.point {
+    font-size: larger;
+    padding: 1em;
+    margin-top: 2em;
+}
+.point > p {margin-top: 2em;}
+
+/* svg doodles */
+.point img {
+    max-width: 100%;
+    object-fit: cover;
+    border: 2px solid var(--greyen);
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.3s;
+    cursor: pointer;
+    z-index: -100;
+}
+
+.point img:hover { transform: perspective(1000px) rotateY(10deg); }
+
+
+/* project section */
+
+#projects {
+    margin-top: 10em;
+    margin-bottom: 10em;
+}
+
+.evil-container {
+    width: 100%;
+    position: relative;
+}
+
+.evil-container::before {
+    content: " ";
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    z-index: 1;
+    mask-image: linear-gradient(to right, black 0%, transparent 5%, transparent 90%, black 100%);
+    backdrop-filter: blur(1px);
+    background: linear-gradient(
+        90deg,
+        var(--background),
+        transparent 10%,
+        transparent 90%,
+        var(--background)
+    );
+    inset: 0;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: scroll;
+    scroll-snap-align: center;
+    scrollbar-width: none;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    z-index: 9;
+}
+
+.card {
+    position: relative; 
+    
+    font-family: 'Gloria Hallelujah', sans-serif;
+
+    border: 10px solid transparent; 
+    border-image-source: url('media/gizmo/box.svg'); 
+    border-image-slice: 30%; /* Adjust based on SVG */
+    border-image-width: 70px; /* Border thickness */
+    border-image-repeat: stretch; 
+    box-sizing: border-box; /* contain content */
+
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+
+    aspect-ratio: 425 / 250;
+    width: auto;
+    padding: 1px;
+    height: 12rem;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center;
+
+    transition: transform 0.1s;
+}
+
+.card > h2, .card > p  {
+    margin-left: 1em;
+    margin-bottom: 5px;
+    margin-right: 1.5em; 
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+}
+
+.card > div {
+    margin-left: 1em;
+}
+
+.card > a {
+    position: absolute; /* external link doesnt interact with content */
+    top: 10px; 
+    right: 10px; 
+    width: 28px; 
+    margin: 0; 
+}
+
+.tag-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.tag {
+    background-image: url('/media/gizmo/tag.svg');
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 36px;
+    margin: 5px;
+}
+
+.tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    padding: 0em 1em;
+    font-size: larger;
+}
+
+#footer-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+
+
+/* responsiveness */
+
+@media screen and (min-width: 768px) {
+    header #logo img {
+        width: 60px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+    
+    #main {
+        display: flex;
+        margin: 3rem;
+        justify-content: space-evenly;
+    }
+
+    #splash {
+        margin-top: 10rem;
+    }
+
+    #splash, #splash p, #splash h1 {
+        align-items: flex-end;
+        text-align: right;
+        width: 20rem;
+    }
+
+    #hero-container {
+        width: min(70%, 600px);
+        margin: 0;
+        height: 300px;
+    }
+
+    #footer-buttons {
+        display: flex;
+        justify-content: flex-start;
+        padding: 1em;
+        gap: 2rem;
+    }
+}
+
