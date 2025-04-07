@@ -159,12 +159,42 @@ header h1 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .header-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .nav-container {
+        margin: 5px;
+    }
+    
+    .nav-link {
+        margin-left: 0;
+        font-size: 0.85rem;
+        padding: 4px 8px;
+    }
+    
+    .links-header h1 {
+        font-size: 1.8rem;
+    }
+    
     .links-grid {
         padding: 0 1rem;
     }
     
     .link-button {
         width: 100%;
+    }
+    
+    #links-container {
+        padding: 1rem 0.5rem;
     }
 }
