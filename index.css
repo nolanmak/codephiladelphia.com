@@ -266,6 +266,19 @@ header h1 {
     display: flex;
     justify-content: space-around;
     padding: 1em;
+    gap: 10px;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
 }
 
 
