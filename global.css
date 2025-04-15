@@ -93,5 +93,24 @@ p { line-height: 1.5rem; }
     text-decoration: none;
 }
 
-/* mobile */
-@media (max-width: 600px) { .hide-mobile { display: none; } }
+/* Mobile styles */
+@media (max-width: 768px) {
+    .hide-mobile { 
+        display: none; 
+    }
+    
+    /* Hide desktop navigation on mobile */
+    .header-right {
+        display: none;
+    }
+    
+    /* Show hamburger menu on mobile */
+    .hamburger-menu {
+        display: block;
+    }
+    
+    /* Prevent scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}

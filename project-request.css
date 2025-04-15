@@ -1,0 +1,155 @@
+/* Project Request Page Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    overflow: hidden;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-container {
+    margin: 0 10px;
+}
+
+.nav-link {
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: var(--text);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    margin-left: 10px;
+}
+
+.nav-link:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.donate-link {
+    background-color: #e83b3b;
+    color: white;
+    border-color: #e83b3b;
+}
+
+.donate-link:hover {
+    background-color: #c52e2e;
+    border-color: #c52e2e;
+}
+
+header #logo img {
+    width: 40px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+#main:before {
+    --size: 45px;
+    --line: color-mix(in lch, var(--gridlines), transparent 80%);
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: 
+        linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size) ) 50% 50% / var(--size) var(--size),
+        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+    mask: linear-gradient(20deg, transparent 50%, white);
+    top: 0;
+    left: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#main {
+    margin-bottom: 12vh;
+    position: relative;
+}
+
+#project-request-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.project-request-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-request-header h1 {
+    font-weight: 300;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.project-request-content {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-request-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.form-container {
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #project-request-container {
+        padding: 1rem;
+    }
+    
+    .project-request-content {
+        padding: 1.5rem;
+    }
+    
+    .header-right {
+        gap: 10px;
+    }
+    
+    .nav-container {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-request-header h1 {
+        font-size: 2rem;
+    }
+    
+    .project-request-content p {
+        font-size: 1rem;
+    }
+}
