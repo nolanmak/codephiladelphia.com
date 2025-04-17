@@ -1,0 +1,21 @@
+/* Custom CSS to fix Tally form text color */
+.tally-form-container {
+    position: relative;
+}
+
+.tally-form-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+/* Override Tally's default styles */
+iframe[data-tally-src] {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
