@@ -51,71 +51,63 @@
             </nav>
         </header>
         <section id="main">
-            <div style="position: relative; width: 80%; max-width: 600px; margin: 3rem auto; height: 350px;">
-                <!-- Simple Carousel with inline styles -->
-                <div id="simple-carousel" style="position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                    <!-- Carousel slides with captions -->
-                    <div id="carousel-slides" style="position: relative; width: 100%; height: 100%;">
-                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
-                            <img src="media/hero/AI Paper Talks.jpg" alt="AI Paper Talks" style="width: 100%; height: 80%; object-fit: cover; border-radius: 8px 8px 0 0;">
-                            <div style="position: absolute; bottom: 40px; left: 0; width: 100%; background-color: rgba(59, 37, 33, 0.8); color: white; padding: 10px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif;">
-                                
-                                AI Paper Talks: Discussing cutting-edge research
+            <div style="position: relative; width: 80%; max-width: 600px; margin: 3rem auto;">
+                <!-- Completely redesigned carousel layout -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Image container -->
+                    <div id="simple-carousel" style="position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                        <!-- Carousel slides -->
+                        <div id="carousel-slides" style="position: relative; width: 100%; height: 100%;">
+                            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 1; transition: opacity 0.5s ease-in-out; display: block;">
+                                <img src="media/hero/AI Paper Talks.jpg" alt="AI Paper Talks" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                                <img src="media/hero/FounderCoworking.jpeg" alt="Founder Coworking" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                                <img src="media/hero/LeetCode Practice.JPEG" alt="LeetCode Practice" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                                <img src="media/hero/ML System Design.JPEG" alt="ML System Design" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                                <img src="media/hero/Tap into the Code and Coffee Community.JPEG" alt="Code and Coffee Community" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                                <img src="media/hero/Web3workshops.JPG" alt="Web3 Workshops" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                                <img src="media/hero/weekendcodingsessions.jpg" alt="Weekend Coding Sessions" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                             </div>
                         </div>
-                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
-                            <img src="media/hero/FounderCoworking.jpeg" alt="Founder Coworking" style="width: 100%; height: 85%; object-fit: cover; border-radius: 8px 8px 0 0;">
-                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; background-color: rgba(59, 37, 33, 0.8); color: white; padding: 10px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 0 0 8px 8px;">
-                                Founder Coworking: Building the next big thing together
+                        
+                        <!-- Carousel Controls (overlay on image) -->
+                        <div style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 15px; z-index: 5;">
+                            <button id="prev-btn" style="background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 18px; color: #3B2521;">❮</button>
+                            
+                            <div id="carousel-indicators" style="display: flex; gap: 8px;">
+                                <button class="indicator" data-slide="0" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; border: none; cursor: pointer; transform: scale(1.2);"></button>
+                                <button class="indicator" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                <button class="indicator" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                <button class="indicator" data-slide="3" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                <button class="indicator" data-slide="4" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                <button class="indicator" data-slide="5" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                <button class="indicator" data-slide="6" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
                             </div>
-                        </div>
-                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
-                            <img src="media/hero/LeetCode Practice.JPEG" alt="LeetCode Practice" style="width: 100%; height: 85%; object-fit: cover; border-radius: 8px 8px 0 0;">
-                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; background-color: rgba(59, 37, 33, 0.8); color: white; padding: 10px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 0 0 8px 8px;">
-                                LeetCode Practice: Sharpening coding skills together
-                            </div>
-                        </div>
-                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
-                            <img src="media/hero/ML System Design.JPEG" alt="ML System Design" style="width: 100%; height: 85%; object-fit: cover; border-radius: 8px 8px 0 0;">
-                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; background-color: rgba(59, 37, 33, 0.8); color: white; padding: 10px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 0 0 8px 8px;">
-                                ML System Design: Architecting intelligent solutions
-                            </div>
-                        </div>
-                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
-                            <img src="media/hero/Tap into the Code and Coffee Community.JPEG" alt="Code and Coffee Community" style="width: 100%; height: 85%; object-fit: cover; border-radius: 8px 8px 0 0;">
-                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; background-color: rgba(59, 37, 33, 0.8); color: white; padding: 10px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 0 0 8px 8px;">
-                                Tap into the Code & Coffee Community
-                            </div>
-                        </div>
-                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
-                            <img src="media/hero/Web3workshops.JPG" alt="Web3 Workshops" style="width: 100%; height: 85%; object-fit: cover; border-radius: 8px 8px 0 0;">
-                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; background-color: rgba(59, 37, 33, 0.8); color: white; padding: 10px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 0 0 8px 8px;">
-                                Web3 Workshops: Exploring blockchain and decentralized apps
-                            </div>
-                        </div>
-                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
-                            <img src="media/hero/weekendcodingsessions.jpg" alt="Weekend Coding Sessions" style="width: 100%; height: 85%; object-fit: cover; border-radius: 8px 8px 0 0;">
-                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; background-color: rgba(59, 37, 33, 0.8); color: white; padding: 10px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 0 0 8px 8px;">
-                                Weekend Coding Sessions: Building projects together
-                            </div>
+                            
+                            <button id="next-btn" style="background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 18px; color: #3B2521;">❯</button>
                         </div>
                     </div>
                     
-                    <!-- Carousel Controls -->
-                    <div style="position: absolute; bottom: 5px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 15px; z-index: 5; background-color: rgba(233, 227, 220, 0.5); padding: 5px; border-radius: 0 0 8px 8px;">
-                        <button id="prev-btn" style="background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 18px; color: #3B2521;">❮</button>
-                        
-                        <div id="carousel-indicators" style="display: flex; gap: 8px;">
-                            <button class="indicator" data-slide="0" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                            <button class="indicator" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                            <button class="indicator" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                            <button class="indicator" data-slide="3" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                            <button class="indicator" data-slide="4" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                            <button class="indicator" data-slide="5" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                            <button class="indicator" data-slide="6" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                        </div>
-                        
-                        <button id="next-btn" style="background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 18px; color: #3B2521;">❯</button>
+                    <!-- Caption container (below image and controls) -->
+                    <div id="carousel-captions" style="width: 100%; background-color: #3B2521; color: white; padding: 15px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); min-height: 50px; font-size: 1.1rem;">
+                        <div class="caption" data-slide="0" style="display: block;">AI Paper Talks: Discussing cutting-edge research</div>
+                        <div class="caption" data-slide="1" style="display: none;">Founder Coworking: Building the next big thing together</div>
+                        <div class="caption" data-slide="2" style="display: none;">LeetCode Practice: Sharpening coding skills together</div>
+                        <div class="caption" data-slide="3" style="display: none;">ML System Design: Architecting intelligent solutions</div>
+                        <div class="caption" data-slide="4" style="display: none;">Tap into the Code & Coffee Community</div>
+                        <div class="caption" data-slide="5" style="display: none;">Web3 Workshops: Exploring blockchain and decentralized apps</div>
+                        <div class="caption" data-slide="6" style="display: none;">Weekend Coding Sessions: Building projects together</div>
                     </div>
                 </div>
             </div>
@@ -303,6 +295,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const slides = document.querySelectorAll('#carousel-slides .slide');
+                const captions = document.querySelectorAll('#carousel-captions .caption');
                 const indicators = document.querySelectorAll('#carousel-indicators .indicator');
                 const prevButton = document.getElementById('prev-btn');
                 const nextButton = document.getElementById('next-btn');
@@ -326,6 +319,15 @@
                         } else {
                             slide.style.opacity = '0';
                             slide.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update captions
+                    captions.forEach((caption, i) => {
+                        if (i === currentIndex) {
+                            caption.style.display = 'block';
+                        } else {
+                            caption.style.display = 'none';
                         }
                     });
                     
