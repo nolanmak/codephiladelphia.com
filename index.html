@@ -51,10 +51,35 @@
             </nav>
         </header>
         <section id="main">
-            <div id="hero-container">
-                <img src="media/hero/topimg.jpg" draggable="true" class="draggable">
-                <img src="media/hero/CodeandCoffee.jpg" draggable="true" class="draggable">
-                <img src="media/hero/IMG_2675.jpeg" draggable="true" class="draggable">
+            <div style="position: relative; width: 80%; max-width: 600px; margin: 3rem auto; height: 350px;">
+                <!-- Simple Carousel with inline styles -->
+                <div id="simple-carousel" style="position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    <!-- Carousel slides -->
+                    <div id="carousel-slides" style="position: relative; width: 100%; height: 100%;">
+                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                            <img src="media/hero/topimg.jpg" alt="Code and Coffee event" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        </div>
+                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                            <img src="media/hero/CodeandCoffee.jpg" alt="Code and Coffee event" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        </div>
+                        <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; display: none;">
+                            <img src="media/hero/IMG_2675.jpeg" alt="Code and Coffee event" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Controls -->
+                    <div style="position: absolute; bottom: 20px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 15px; z-index: 5;">
+                        <button id="prev-btn" style="background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 18px; color: #3B2521;">❮</button>
+                        
+                        <div id="carousel-indicators" style="display: flex; gap: 8px;">
+                            <button class="indicator" data-slide="0" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                            <button class="indicator" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                            <button class="indicator" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                        </div>
+                        
+                        <button id="next-btn" style="background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 18px; color: #3B2521;">❯</button>
+                    </div>
+                </div>
             </div>
             <div id="splash">
                 <h1>Elevating Philly’s<br>Tech Ecosystem</h1>
@@ -236,94 +261,124 @@
         <!-- Mobile menu functionality -->
         <script src="./menu.js"></script>
 
-        <!-- make hero images draggable -->
-
+        <!-- Simple Carousel functionality with inline styles -->
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const draggables = document.querySelectorAll('.draggable');
-                let activeItem = null;
-                let initialX;
-                let initialY;
-                let xOffset = 0;
-                let yOffset = 0;
+                const slides = document.querySelectorAll('#carousel-slides .slide');
+                const indicators = document.querySelectorAll('#carousel-indicators .indicator');
+                const prevButton = document.getElementById('prev-btn');
+                const nextButton = document.getElementById('next-btn');
+                let currentIndex = 0;
+                let interval;
 
-                // Get the initial rotation for each image and store it
-                draggables.forEach((draggable, index) => {
-                    // Store initial rotations
-                    const rotations = ['-12deg', '0deg', '5deg'];
-                    draggable.dataset.rotation = rotations[index];
+                // Function to show a specific slide
+                function showSlide(index) {
+                    // Handle index boundaries
+                    if (index < 0) index = slides.length - 1;
+                    if (index >= slides.length) index = 0;
                     
-                    // Set initial transforms
-                    const startX = ['10%', '15%', '20%'][index];
-                    const startY = ['20%', '30%', '40%'][index];
-                    draggable.style.transform = `translate(${startX}, ${startY}) rotate(${rotations[index]})`;
+                    // Update current index
+                    currentIndex = index;
                     
-                    // Prevent default dragging behavior
-                    draggable.addEventListener('dragstart', (e) => e.preventDefault());
-                });
+                    // Update slides
+                    slides.forEach((slide, i) => {
+                        if (i === currentIndex) {
+                            slide.style.opacity = '1';
+                            slide.style.display = 'block';
+                        } else {
+                            slide.style.opacity = '0';
+                            slide.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update indicators
+                    indicators.forEach((indicator, i) => {
+                        if (i === currentIndex) {
+                            indicator.style.backgroundColor = 'white';
+                            indicator.style.transform = 'scale(1.2)';
+                        } else {
+                            indicator.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                            indicator.style.transform = 'scale(1)';
+                        }
+                    });
+                }
 
-                function dragStart(e) {
-                    // Prevent any default behaviors
+                // Function to go to the next slide
+                function nextSlide() {
+                    showSlide(currentIndex + 1);
+                }
+
+                // Function to go to the previous slide
+                function prevSlide() {
+                    showSlide(currentIndex - 1);
+                }
+
+                // Set up auto-rotation
+                function startAutoRotation() {
+                    if (interval) clearInterval(interval);
+                    interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+                }
+
+                // Stop auto-rotation
+                function stopAutoRotation() {
+                    if (interval) clearInterval(interval);
+                }
+
+                // Event listeners for controls
+                prevButton.addEventListener('click', (e) => {
                     e.preventDefault();
-                    
-                    if (e.target.classList.contains('draggable')) {
-                        activeItem = e.target;
-                        
-                        const rect = activeItem.getBoundingClientRect();
-                        const transform = window.getComputedStyle(activeItem).transform;
-                        const matrix = new DOMMatrix(transform);
-                        
-                        // Get current position accounting for rotation
-                        xOffset = matrix.m41;
-                        yOffset = matrix.m42;
-                        
-                        initialX = (e.type === "touchstart" ? e.touches[0].clientX : e.clientX) - xOffset;
-                        initialY = (e.type === "touchstart" ? e.touches[0].clientY : e.clientY) - yOffset;
-
-                        // Bring active item to front
-                        activeItem.style.zIndex = '1000';
-                        
-                        document.addEventListener('mousemove', drag);
-                        document.addEventListener('touchmove', drag);
-                        document.addEventListener('mouseup', dragEnd);
-                        document.addEventListener('touchend', dragEnd);
-                    }
-                }
-
-                function drag(e) {
-                    if (activeItem) {
-                        e.preventDefault();
-                        
-                        const currentX = (e.type === "touchmove" ? e.touches[0].clientX : e.clientX) - initialX;
-                        const currentY = (e.type === "touchmove" ? e.touches[0].clientY : e.clientY) - initialY;
-                        
-                        xOffset = currentX;
-                        yOffset = currentY;
-
-                        const rotation = activeItem.dataset.rotation || '0deg';
-                        activeItem.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotation})`;
-                    }
-                }
-
-                function dragEnd(e) {
-                    if (activeItem) {
-                        // Reset z-index
-                        activeItem.style.zIndex = '';
-                        activeItem = null;
-                        
-                        // Remove event listeners
-                        document.removeEventListener('mousemove', drag);
-                        document.removeEventListener('touchmove', drag);
-                        document.removeEventListener('mouseup', dragEnd);
-                        document.removeEventListener('touchend', dragEnd);
-                    }
-                }
-
-                // Add initial event listeners
-                draggables.forEach(draggable => {
-                    draggable.addEventListener('mousedown', dragStart);
-                    draggable.addEventListener('touchstart', dragStart);
+                    prevSlide();
+                    startAutoRotation(); // Reset the timer when manually changing slides
                 });
+
+                nextButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextSlide();
+                    startAutoRotation(); // Reset the timer when manually changing slides
+                });
+
+                // Event listeners for indicators
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        showSlide(index);
+                        startAutoRotation(); // Reset the timer when manually changing slides
+                    });
+                });
+
+                // Pause rotation when hovering over carousel
+                const carousel = document.getElementById('simple-carousel');
+                carousel.addEventListener('mouseenter', stopAutoRotation);
+                carousel.addEventListener('mouseleave', startAutoRotation);
+
+                // Touch events for swipe functionality
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                carousel.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+
+                carousel.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                });
+
+                function handleSwipe() {
+                    const swipeThreshold = 50; // Minimum distance to register as a swipe
+                    if (touchEndX < touchStartX - swipeThreshold) {
+                        // Swipe left - go to next slide
+                        nextSlide();
+                    } else if (touchEndX > touchStartX + swipeThreshold) {
+                        // Swipe right - go to previous slide
+                        prevSlide();
+                    }
+                    startAutoRotation(); // Reset timer after swipe
+                }
+
+                // Show first slide and start the carousel
+                showSlide(0);
+                startAutoRotation();
             });
         </script>
     </body>

@@ -83,29 +83,7 @@ header h1 {
 }
 #main {margin-bottom: 12vh;}
 
-#hero-container {
-    position: relative;
-    width: min(50%, 400px);
-    margin: 3rem;
-    padding: 2rem;
-    height: 200px; /* Fixed height container */
-}
-
-.draggable {
-    position: absolute;
-    width: 80%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    border: 1px solid var(--hero-border);
-    border-radius: 0.5em;
-    filter: drop-shadow(-4px 8px 3px rgba(0, 0, 0, 0.25));
-    cursor: move;
-    touch-action: none; /* Prevents scrolling while dragging on touch devices */
-}
-
-.draggable:nth-child(1) { transform: rotate(-12deg); top: 0%; left: 0%; }
-.draggable:nth-child(2) { transform: rotate(0deg); top: 25%; left: 15%; }
-.draggable:nth-child(3) { transform: rotate(5deg); top: 40%; left: 0%; }
+/* Hero container styles are now handled with inline styles in the HTML */
 
 /* splash text */
 
