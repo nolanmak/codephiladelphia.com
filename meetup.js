@@ -20,44 +20,78 @@ document.addEventListener('DOMContentLoaded', function() {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
                 
-                // Extract upcoming events
-                const eventElements = doc.querySelectorAll('.eventCard');
+                // Extract upcoming events from JSON-LD script tags
+                const scriptTags = doc.querySelectorAll('script[type="application/ld+json"]');
+                let events = [];
                 
-                if (eventElements.length === 0) {
-                    eventsContainer.innerHTML = '<p>No upcoming events found. Check back soon!</p>';
+                scriptTags.forEach(script => {
+                    try {
+                        const jsonData = JSON.parse(script.textContent);
+                        if (Array.isArray(jsonData)) {
+                            // Filter for Event type objects
+                            const eventObjects = jsonData.filter(item => item['@type'] === 'Event');
+                            events = events.concat(eventObjects);
+                        }
+                    } catch (e) {
+                        console.error('Error parsing JSON data:', e);
+                    }
+                });
+                
+                if (events.length === 0) {
+                    eventsContainer.innerHTML = '<p style="color: #000000;">No upcoming events found. Check back soon!</p>';
                     return;
                 }
+                
+                // Sort events by date
+                events.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
                 
                 // Clear loading message
                 eventsContainer.innerHTML = '';
                 
                 // Display up to 3 upcoming events
-                const maxEvents = Math.min(eventElements.length, 3);
+                const maxEvents = Math.min(events.length, 3);
                 
                 for (let i = 0; i < maxEvents; i++) {
-                    const eventElement = eventElements[i];
+                    const event = events[i];
                     
-                    // Extract event details
-                    const titleElement = eventElement.querySelector('.eventCardHead--title');
-                    const dateElement = eventElement.querySelector('.eventTimeDisplay-startDate');
-                    const timeElement = eventElement.querySelector('.eventTimeDisplay-startTime');
-                    const locationElement = eventElement.querySelector('.venueDisplay-venue-address');
-                    const linkElement = eventElement.querySelector('a.eventCard--link');
+                    // Format date and time
+                    const eventDate = new Date(event.startDate);
+                    const formattedDate = eventDate.toLocaleDateString('en-US', {
+                        weekday: 'short',
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric'
+                    });
                     
-                    const title = titleElement ? titleElement.textContent.trim() : 'Untitled Event';
-                    const date = dateElement ? dateElement.textContent.trim() : '';
-                    const time = timeElement ? timeElement.textContent.trim() : '';
-                    const location = locationElement ? locationElement.textContent.trim() : 'Location TBA';
-                    const link = linkElement ? 'https://www.meetup.com' + linkElement.getAttribute('href') : 'https://www.meetup.com/code-coffee-philly/';
+                    const formattedTime = eventDate.toLocaleTimeString('en-US', {
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        hour12: true
+                    });
+                    
+                    // Get location
+                    let location = 'Location TBA';
+                    if (event.location && event.location.name) {
+                        location = event.location.name;
+                        if (event.location.address && event.location.address.addressLocality) {
+                            location += ', ' + event.location.address.addressLocality;
+                        }
+                    }
                     
                     // Create event card
                     const eventCard = document.createElement('div');
                     eventCard.className = 'event-card';
+                    eventCard.style.backgroundColor = 'white';
+                    eventCard.style.borderRadius = '8px';
+                    eventCard.style.padding = '15px';
+                    eventCard.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+                    eventCard.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+                    
                     eventCard.innerHTML = `
-                        <h3>${title}</h3>
-                        <p class="event-date">${date} at ${time}</p>
-                        <p class="event-location">${location}</p>
-                        <a href="${link}" target="_blank" class="event-link">View Details</a>
+                        <h3 style="margin-top: 0; color: #000000; font-size: 1.2rem;">${event.name}</h3>
+                        <p style="margin: 8px 0; color: #000000; font-size: 0.9rem;">${formattedDate} at ${formattedTime}</p>
+                        <p style="margin: 8px 0; color: #000000; font-size: 0.9rem;">${location}</p>
+                        <a href="${event.url}" target="_blank" style="display: inline-block; margin-top: 10px; padding: 6px 12px; background-color: #59969B; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem; transition: background-color 0.2s ease;">View Details</a>
                     `;
                     
                     eventsContainer.appendChild(eventCard);
@@ -65,13 +99,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Add a "View All" link
                 const viewAllLink = document.createElement('div');
-                viewAllLink.className = 'view-all-events';
-                viewAllLink.innerHTML = '<a href="https://www.meetup.com/code-coffee-philly/events/" target="_blank">View All Events</a>';
+                viewAllLink.style.textAlign = 'center';
+                viewAllLink.style.marginTop = '15px';
+                viewAllLink.innerHTML = '<a href="https://www.meetup.com/code-coffee-philly/events/" target="_blank" style="color: #000000; text-decoration: none; font-weight: bold;">View All Events</a>';
                 eventsContainer.appendChild(viewAllLink);
             })
             .catch(error => {
                 console.error('Error fetching Meetup events:', error);
-                eventsContainer.innerHTML = '<p>Unable to load events. Please check <a href="https://www.meetup.com/code-coffee-philly/" target="_blank">our Meetup page</a>.</p>';
+                eventsContainer.innerHTML = '<p style="color: #000000;">Unable to load events. Please check <a href="https://www.meetup.com/code-coffee-philly/" target="_blank" style="color: #000000;">our Meetup page</a>.</p>';
             });
     }
     

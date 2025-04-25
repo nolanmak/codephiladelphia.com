@@ -29,6 +29,7 @@ app.get('/api/meetup-events', (req, res) => {
       'Sec-Fetch-Mode': 'navigate',
       'Sec-Fetch-User': '?1',
       'Sec-Fetch-Dest': 'document',
+      'host': 'www.meetup.com',
       'Cookie': 'MEETUP_BROWSER_ID=id=96815eb7-367d-46b4-924f-aa51e4dc5ede; MEETUP_TRACK=id=d0e6a7ae-42e3-4226-92b0-c8d92203b386; SIFT_SESSION_ID=f035d201-34d0-4f69-b96c-d95c477d3401'
     }
   };
