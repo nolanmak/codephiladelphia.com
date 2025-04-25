@@ -182,7 +182,6 @@ temp.txt
 *.csv
 filings
 !requirements.txt
-*.html
 !package-lock.json
 !package.json
 .qodo
