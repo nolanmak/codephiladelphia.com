@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PTW Hackathon 2025 - Code & Coffee</title>
+        <meta charset="utf-8" />
+        <meta name="title" content="PTW Hackathon 2025 - Code & Coffee" />
+        <meta name="description" content="Code & Coffee Philadelphia's Philly Tech Week Hackathon 2025" />
+        <meta name="theme-color" content="#e83b3b" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="media/logo/transparent.png">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+
+        <link rel="stylesheet" href="./global.css" />
+        <link rel="stylesheet" href="./index.css" />
+        <style>
+            .blog-container {
+                width: 90%;
+                max-width: 800px;
+                margin: 40px auto;
+                padding: 30px;
+                background-color: #f9f5f1;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                color: #3B2521;
+            }
+            
+            .blog-header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .blog-image {
+                width: 100%;
+                max-width: 600px;
+                border-radius: 8px;
+                margin: 20px auto;
+                display: block;
+            }
+            
+            .blog-content {
+                line-height: 1.6;
+                font-size: 1.1rem;
+            }
+            
+            .blog-section {
+                margin-bottom: 25px;
+            }
+            
+            .blog-footer {
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid #ddd;
+                text-align: center;
+            }
+            
+            .cta-button {
+                display: inline-block;
+                background-color: #59969B;
+                color: white;
+                padding: 12px 25px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+                margin-top: 20px;
+                transition: background-color 0.3s ease;
+            }
+            
+            .cta-button:hover {
+                background-color: #457579;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-top: 30px;
+                margin-bottom: 15px;
+                color: #3B2521;
+            }
+
+            .subsection-title {
+                font-size: 1.25rem;
+                font-weight: bold;
+                margin-top: 25px;
+                margin-bottom: 10px;
+                color: #3B2521;
+            }
+
+            .judge-images {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px 0;
+            }
+
+            .judge-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .sponsor-images {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                margin: 20px 0;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+
+            table, th, td {
+                border: 1px solid #ddd;
+            }
+
+            th, td {
+                padding: 12px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+
+            ul.blog-list {
+                padding-left: 25px;
+            }
+
+            ul.blog-list li {
+                margin-bottom: 10px;
+            }
+
+            .image-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                margin: 20px 0;
+            }
+
+            .gallery-image {
+                max-width: 100%;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="media/logo/transparent.png" alt="Coffee cup icon logo" draggable="false">
+                    </a>
+                </div>
+                <h1>Code & Coffee</h1>
+            </div>
+            <!-- Mobile hamburger menu button -->
+            <button id="mobile-menu-button" style="display: none; background: none; border: none; cursor: pointer; position: absolute; right: 15px; top: 15px; z-index: 1001;" aria-label="Open menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#828282" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+            </button>
+            <nav id="desktop-nav" class="header-right">
+                <div class="nav-container">
+                    <a href="links.html" class="nav-link">Links</a>
+                </div>
+                <div class="nav-container">
+                    <a href="project-request.html" class="nav-link">Project Request</a>
+                </div>
+                <div class="nav-container">
+                    <a href="talent-matchboard.html" class="nav-link">Tech Talent Matchboard</a>
+                </div>
+                <div class="nav-container">
+                    <a href="event-sponsorship.html" class="nav-link">Event Sponsorship</a>
+                </div>
+                <div class="nav-container">
+                    <a href="blog-ptw-hackathon.html" class="nav-link">PTW Hackathon</a>
+                </div>
+                <div class="nav-container">
+                    <a href="https://nol-kky-shop.fourthwall.com/" target="_blank" class="nav-link">Merch</a>
+                </div>
+                <div class="nav-container">
+                    <a href="https://hcb.hackclub.com/donations/start/code-and-coffee-philadelphia" target="_blank" class="nav-link">Community Fund</a>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+            <div class="blog-container">
+                <div class="blog-header">
+                    <h1>Fueling Philly's Tech Future: Code & Coffee's Innovation Engine</h1>
+                </div>
+                
+                <img src="PTW Hackathon Blog/images/image5.jpg" alt="Code & Coffee 2025 Philly Tech Week Hackathon" class="blog-image">
+                
+                <div class="blog-content">
+                    <p>Philadelphia's technology scene features communities fostering growth and innovation. Code & Coffee Philadelphia, a non-profit, energizes this ecosystem. Their "Philly Innovation Hackathon 2025" during Philly Tech Week brought together innovators to solve challenges. This event reflects Code & Coffee's mission to connect, educate, and empower local tech talent.</p>
+
+                    <h2 class="section-title">Igniting Innovation: Code & Coffee's Philly Tech Week Hackathon – The "Philly Innovation Hackathon 2025"</h2>
+                    
+                    <h3 class="subsection-title">A. Event Overview: Setting the Stage for Innovation</h3>
+                    <p>During Philly Tech Week, a city-wide event showcasing Philadelphia's tech growth, Code & Coffee Philadelphia hosted its "Philly Innovation Hackathon 2025." The multi-day event, themed "Build the Future!", focused on solutions in AI, generative tooling, and more. It connected innovators, developers, and entrepreneurs at Comcast Lift Labs in Philadelphia.</p>
+
+                    <p>The schedule included:</p>
+                    <ul class="blog-list">
+                        <li><strong>Kickoff:</strong> Wednesday, May 7th, 2025 @ 8:00 AM - 1:00 PM EDT</li>
+                        <li><strong>In Person Demo Begins:</strong> Friday, May 9th, 2025 @ 10:00 AM - 6:00 PM EDT (1800 PM)</li>
+                        <li><strong>Submission Deadline:</strong> Saturday, May 10th, 2025 @ 12:00 PM EDT</li>
+                        <li><strong>After party at Samba Steakhouse:</strong> Saturday, May 10th, 2025 @ 7:00 PM EDT (Winners of the BYO/Other Challenge received a free meal with the organizers)</li>
+                    </ul>
+
+                    <p>Aligned with Philly Tech Week, the hackathon used the city's tech enthusiasm to foster collaboration. The focus on emerging technologies shows Code & Coffee's commitment to developing future tech skills.</p>
+
+                    <h3 class="subsection-title">B. The Gauntlet: Tracks Designed to Inspire</h3>
+                    <p>The hackathon featured distinct tracks:</p>
+
+                    <table>
+                        <tr>
+                            <th>Track Name</th>
+                            <th>Description/Focus</th>
+                            <th>Example Project Areas</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Generative Game System</strong></td>
+                            <td>Create next-gen generative and interactive gaming systems with AI!</td>
+                            <td>AI-powered game mechanics, dynamic content generation tools, interactive storytelling platforms.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BYO Idea/Other</strong></td>
+                            <td>Develop Philly-focused apps, powerful webscraping tools, automation solutions, or implement cutting-edge academic research.</td>
+                            <td>Civic tech applications for Philadelphia, data analysis tools for local issues, automation scripts for repetitive tasks, novel research applications.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Best Startup Oriented Project</strong></td>
+                            <td>Encouraging the development of projects with clear business potential and a path towards becoming a startup.</td>
+                            <td>Innovative solutions with market viability, scalable business models, projects designed for commercialization.</td>
+                        </tr>
+                    </table>
+
+                    <p>Tracks catered to varied interests. The "BYO Idea/Other" track encouraged "Philly-focused apps," emphasizing local impact.</p>
+
+                    <h3 class="subsection-title">C. Judging Panel: The Experts Behind the Decisions</h3>
+                    <p>Projects were evaluated by:</p>
+                    <ul class="blog-list">
+                        <li>Arjun Chakraborty - Principal Applied AI Engineer, Microsoft</li>
+                        <li>Jivitesh Poojary - Lead ML Engineer, Comcast</li>
+                        <li>Praneetha Kotla - Lead Robotic Process Automation Developer, ERP Smartlabs</li>
+                        <li>Tony Siu - Founding Computer Vision & Animations Engineer, TryVariant.ai</li>
+                        <li>Himanshu Hansaria - Machine Learning Engineer, Five Below</li>
+                        <li>Derek Meegan - Data and Analytics Senior Associate, Grant Thorton</li>
+                        <li>Ruchi Mangharamani - IT Bus system Analyst Sr Advisor</li>
+                        <li>Zack Light - SDE in the High Frequency Trading industry</li>
+                        <li>Raphael Namberd - Blockspace Blockchain Engineer</li>
+                        <li>Surya Rao Rayarao - Lead Software Engineeer, SS&C Technologies</li>
+                    </ul>
+
+                    <div class="judge-images">
+                        <img src="PTW Hackathon Blog/images/image8.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image2.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image4.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image19.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image17.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image15.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image16.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image12.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image6.png" alt="Judge" class="judge-image">
+                        <img src="PTW Hackathon Blog/images/image18.png" alt="Judge" class="judge-image">
+                    </div>
+
+                    <h3 class="subsection-title">D. Prizes and Recognition: Rewarding Ingenuity</h3>
+                    <p>Prizes included:</p>
+                    <ul class="blog-list">
+                        <li><strong>Generative Retro Gaming System Challenge:</strong> $1,000 cash.</li>
+                        <li><strong>BYO/Other Challenge!:</strong> Meal at Samba Steakhouse with organizers.</li>
+                        <li><strong>Best Startup oriented project!:</strong> 1-hour Digital Marketing consultation and free use of A-Pro's SEO content generation platform ($600 value).</li>
+                    </ul>
+
+                    <p>Prizes offered rewards, built community, and supported entrepreneurial goals.</p>
+
+                    <h3 class="subsection-title">E. And The Winners Are...: Showcasing Breakthrough Projects</h3>
+                    
+                    <h4 class="subsection-title">1. Winner: Generative Retro Gaming System Challenge - A.I Text to Game Generator</h4>
+                    <ul class="blog-list">
+                        <li><strong>Inspiration:</strong> Expanding imagination by turning concepts into code.</li>
+                        <li><strong>What it does:</strong> Translates natural language into HTML/CSS/JavaScript games using OpenAI API.</li>
+                        <li><strong>How I built it:</strong> Node.js/Express backend, HTML game templates, OpenAI GPT model. Frontend UI for game selection and description.</li>
+                        <li><strong>Challenges:</strong> Initial design, API token limits, preserving game functionality with AI rewrites.</li>
+                        <li><strong>Accomplishments:</strong> Bringing the idea to life.</li>
+                        <li><strong>What I learned:</strong> LLMs have a strong future in application cores.</li>
+                        <li><strong>What's next:</strong> Improving text-to-game logic translation. Chain prompts feature added.</li>
+                        <li><strong>Built With:</strong> body-parser, canvas, cors, css, dotenv, emoji-based, express.js, fs, html5, javascript, node.js, openai, path.</li>
+                        <li><strong>Try it out:</strong> <a href="http://ai-generate-games.onrender.com" target="_blank">ai-generate-games.onrender.com</a></li>
+                    </ul>
+
+                    <img src="PTW Hackathon Blog/images/image13.jpg" alt="AI Text to Game Generator" class="blog-image">
+
+                    <h4 class="subsection-title">2. Winner: BYO/Other Challenge & Best Startup Oriented Project - PitchSnap – Real-Time Proposal Generation from Sales Calls</h4>
+                    <ul class="blog-list">
+                        <li><strong>Inspiration:</strong> Simplifying workflow and eliminating proposal delays post-sales calls.</li>
+                        <li><strong>What it does:</strong> Transcribes live Zoom calls (OpenAI Whisper), identifies client needs (NLP), and auto-generates proposals (GPT-4).</li>
+                        <li><strong>How we built it:</strong> OpenAI Whisper, NLP, GPT-4, simple UI.</li>
+                        <li><strong>Challenges:</strong> Transcription accuracy, prompt engineering for human-like proposals, balancing automation and human review.</li>
+                        <li><strong>Accomplishments:</strong> Functional MVP generating proposals in under a minute; integrated Whisper and GPT-4.</li>
+                        <li><strong>What we learned:</strong> Importance of speed in sales; careful AI use for professionalism; value of simplicity.</li>
+                        <li><strong>What's next:</strong> Zoom/Teams integrations, customizable branding, browser extension, real-time coaching.</li>
+                        <li><strong>Built With:</strong> express.js, react.</li>
+                    </ul>
+
+                    <div class="image-gallery">
+                        <img src="PTW Hackathon Blog/images/image14.jpg" alt="PitchSnap" class="gallery-image" style="max-width: 500px;">
+                        <img src="PTW Hackathon Blog/images/image7.jpg" alt="PitchSnap Mobile" class="gallery-image" style="max-width: 350px;">
+                    </div>
+
+                    <h3 class="subsection-title">F. Special Thanks to Our Supporters</h3>
+                    <p>The hackathon's success was due to our organizers and sponsors.</p>
+
+                    <p><strong>Organizing Team:</strong><br>
+                    Tony Siu, Eve Hartwell, Himanshu Hansaria, Raphael Nembhard, Christian Iosif, Derek Meegan, Grace Francisco, Allison Bishop, Bamidélé Elégbédé, Nolan Makatche</p>
+
+                    <p><strong>Sponsors:</strong><br>
+                    Comcast, Midio, RitualShare, A Pro Solutions Inc., Variant AI, sidejawn.</p>
+
+                    <div class="sponsor-images">
+                        <img src="PTW Hackathon Blog/images/image9.png" alt="Sponsor" style="max-width: 200px;">
+                        <img src="PTW Hackathon Blog/images/image3.png" alt="Sponsors" style="max-width: 600px;">
+                        <img src="PTW Hackathon Blog/images/image10.png" alt="Sponsors" style="max-width: 600px;">
+                        <img src="PTW Hackathon Blog/images/image1.png" alt="Sponsors" style="max-width: 600px;">
+                    </div>
+
+                    <p>We thank them for their commitment to Philly's tech community.</p>
+
+                    <h2 class="section-title">The Engine Room: Code & Coffee's Core Mission and Impact</h2>
+                    
+                    <h3 class="subsection-title">A. More Than Just Code: A Non-Profit Fueling Philly's Tech Ecosystem</h3>
+                    <p>Code & Coffee Philadelphia's mission is to elevate the city's tech ecosystem through a collaborative environment for engineers, designers, and learners. As a non-profit, it focuses on community enrichment. Affiliated with socratica and code & coffee networks, it connects to a larger movement for accessible tech education, strengthening its local impact with shared practices and resources for sustainable community development.</p>
+
+                    <h3 class="subsection-title">B. Fostering Collaboration, Continuous Learning, and Growth</h3>
+                    <p>Code & Coffee's community includes over 1,700 developers. Regular meetups encourage attendees to work on projects together, fostering collaboration and idea-sharing.</p>
+
+                    <p>Continuous learning and knowledge exchange are key. Members explore interests and showcase diverse projects. This inclusivity attracts varied tech enthusiasts and promotes cross-disciplinary learning.</p>
+
+                    <h2 class="section-title">Powering Potential: A Deep Dive into Code & Coffee's Offerings</h2>
+                    <p>Code & Coffee Philadelphia offers various resources for growth, learning, and connection.</p>
+
+                    <table>
+                        <tr>
+                            <th>Offering Type</th>
+                            <th>Brief Description</th>
+                            <th>Primary Benefit/How to Engage</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Technical Workshops</strong></td>
+                            <td>Sessions on topics like AI, ML System Design, Web3, and practical skills like R for data analysis.</td>
+                            <td>Skill enhancement, exposure to new technologies. Engage via Meetup for event schedules.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Learning Groups</strong></td>
+                            <td>Member-driven groups like LeetCode Wednesdays and Diffusion Models Reading Group.</td>
+                            <td>Collaborative learning, peer support, focused skill practice. Join via Meetup/Discord.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dev Shop</strong></td>
+                            <td>A model for community talent to work on client projects.</td>
+                            <td>Real-world experience, portfolio building, project execution. Engage via "Project Request" link on their website.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tech Talent Matchboard</strong></td>
+                            <td>A platform connecting companies with tech talent from the Code & Coffee community.</td>
+                            <td>Job opportunities for members, talent sourcing for companies. Engage via the Matchboard link on their website.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Community Events</strong></td>
+                            <td>Regular meetups, coworking sessions (e.g., Startup Coworking Circle), and networking events like "Code with Steak."</td>
+                            <td>Networking, collaboration, community building. Attend events listed on Meetup.</td>
+                        </tr>
+                    </table>
+
+                    <h3 class="subsection-title">A. Sharpening Skills: Workshops, Reading Groups, and Knowledge Exchange</h3>
+                    <p>Continuous learning is central to Code & Coffee. Educational opportunities include:</p>
+                    <ul class="blog-list">
+                        <li><strong>Formal Workshops:</strong> Offerings like "AI Paper Talks," "ML System Design," and "Web3 Workshops" focus on current technologies. Past events include a "Free R survey data half-day workshop."</li>
+                        <li><strong>Community-Led Learning:</strong> Member initiatives include "LeetCode Wednesdays" for coding interview practice and a "Diffusion Models Reading Group" for AI research discussions.</li>
+                    </ul>
+
+                    <p>Product Design and Security align with Code & Coffee's focus. Their hackathon's "Agents" track and "AI Paper Talks" demonstrate AI engagement. Check their channels for future sessions.</p>
+
+                    <p>This mix of formal and member-led learning creates an adaptive educational model. It meets structured needs and community interests, adapting to tech trends and member requirements for relevant offerings.</p>
+
+                    <h3 class="subsection-title">B. Building Solutions: The Code & Coffee Dev Shop Model</h3>
+                    <p>Code & Coffee Philadelphia supports practical application through its dev shop model. A "Project Request" link on their website allows clients to engage community talent for development. Members gain real-world experience and build portfolios; businesses access motivated developers.</p>
+
+                    <p>Dev shops typically involve client interaction, collaborative development, and DevOps tools, offering learning opportunities. This model connects learning with professional application, incubating talent. It can provide skilled individuals for Philly's tech workforce and support the non-profit's mission.</p>
+
+                    <h3 class="subsection-title">C. Connecting Talent: The Tech Talent Matchboard</h3>
+                    <p>Code & Coffee Philadelphia facilitates career connections via its Tech Talent Matchboard. This platform connects companies/recruiters with skilled community members. It helps members find jobs and companies source talent committed to learning and collaboration, linking engagement to employment.</p>
+
+                    <p>The matchboard is valuable in Philly's tech hub and provides feedback for Code & Coffee. Observing industry demands helps align programs with market needs, making members competitive and strengthening its role in the tech talent pipeline.</p>
+
+                    <h2 class="section-title">Join the Movement: Your Invitation to Get Involved with Code & Coffee</h2>
+                    <p>Code & Coffee Philadelphia relies on participation and collaboration.</p>
+
+                    <h3 class="subsection-title">A. An Open Door: How Individuals Can Participate and Thrive</h3>
+                    <p>Individuals are key to Code & Coffee. Participate by attending meetups, bringing a laptop, sharing ideas, and working on projects. The community of over 1,700 members offers networking, peer learning, and collaboration. Follow on Instagram and LinkedIn for updates.</p>
+
+                    <h3 class="subsection-title">B. Partnering for Impact: Opportunities for Organizations</h3>
+                    <p>Organizations can partner with Code & Coffee to support Philly's tech scene:</p>
+                    <ul class="blog-list">
+                        <li><strong>Event Sponsorship:</strong> Financially support activities for visibility.</li>
+                        <li><strong>Project Collaboration:</strong> Engage community talent via the "Project Request" system.</li>
+                        <li><strong>Talent Acquisition:</strong> Use the Tech Talent Matchboard to find tech professionals.</li>
+                        <li><strong>Community Fund:</strong> Contribute financially to support the non-profit's mission.</li>
+                        <li><strong>Merchandise:</strong> Purchase merchandise to show support.</li>
+                    </ul>
+
+                    <p>These options offer flexible partnerships for social responsibility, talent sourcing, project development, or community support, enabling tailored connections and mutually beneficial relationships.</p>
+
+                    <h3 class="subsection-title">C. Your Direct Links to the Code & Coffee Universe:</h3>
+                    <ul class="blog-list">
+                        <li><strong>Explore Code & Coffee Philadelphia:</strong> <a href="https://www.codephiladelphia.com/" target="_blank">https://www.codephiladelphia.com/</a></li>
+                        <li><strong>Philly Tech Week Hackathon Details:</strong> <a href="https://code-coffee-philly-tech-week.devpost.com/?ref_feature=challenge&ref_medium=your-open-hackathons&ref_content=Recently+ended" target="_blank">View on Devpost</a></li>
+                        <li><strong>View Hackathon Projects & Winners:</strong> <a href="https://code-coffee-philly-tech-week.devpost.com/project-gallery" target="_blank">Project Gallery</a></li>
+                    </ul>
+
+                    <h2 class="section-title">The Future is Caffeinated: Code & Coffee's Enduring Impact on Philadelphia</h2>
+                    <p>Code & Coffee Philadelphia is a catalyst for a skilled, collaborative, and innovative tech community. Events like the "Philly Innovation Hackathon 2025," educational programs, and talent platforms show its commitment to growth and connection.</p>
+
+                    <p>Its impact is in building social capital through spaces for knowledge sharing, collaboration, and trust. This network is an asset for regional innovation. As Philadelphia grows as a tech hub, Code & Coffee's role is vital.</p>
+
+                    <img src="PTW Hackathon Blog/images/image11.jpg" alt="Code & Coffee Community" class="blog-image" style="max-width: 300px;">
+                </div>
+                
+                <div class="blog-footer">
+                    <h2>Ready to join the Code & Coffee community?</h2>
+                    <p>Check out our upcoming events and become part of Philly's innovative tech ecosystem!</p>
+                    <a href="https://www.meetup.com/code-coffee-philly/" target="_blank" class="cta-button">Join Our Meetup</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer" class="pure-g">
+            <div class="pure-u-1-5"> <!-- info: formatting div --> </div>
+            <div class="pure-u-md-1-2">
+                <p class="footer-text">
+                    If you're passionate about what you're working on, and want to build around others, we'd love for you to join us :)
+                </p>
+                <p class="footer-text handwriting" style="text-align: left;">
+                    <span style="font-size: medium; margin-right: 3.5em;">your hosts,</span>
+                    <br>
+                    <span style="font-size: medium; margin-right: 3em;">
+                        <a href="https://evehartwell.com/" target="_blank">eve</a>, 
+                        <a href="https://vivime.info" target="_blank">vish</a>, 
+                        <a href="https://github.com/Tony363" target="_blank">tony</a>, 
+                        <a href="https://x.com/derekmeegan" target="_blank">derek</a>,
+                        <a href="https://x.com/NolanMakatche" target="_blank">nolan</a>,
+                        <a href="https://www.linkedin.com/in/himanshuhansaria/" target="_blank">himanshu</a>,
+                        <a href="https://www.linkedin.com/in/christian-iosif-217015152/" target="_blank">christian</a>,
+                        <a href="https://www.linkedin.com/in/moses-samuel/" target="_blank">moses</a> & 
+                        <a href="https://www.linkedin.com/in/raphael-nembhard-701b41180/" target="_blank">raphael</a>
+                    </span>
+                </p>
+                <div id="footer-buttons">
+                    <div class="button">
+                        <a href="https://www.meetup.com/code-coffee-philly/" target="_blank" class="icon-button">
+                            <img src="media/social/meetup.svg" alt="Meetup" class="button-icon" width="20" height="20">
+                            RSVP
+                        </a>
+                    </div>
+                    <div class="button">
+                        <a id="instagram" href="https://instagram.com/philly_codes" target="_blank" class="icon-button">
+                            <img src="media/social/instagram.svg" alt="Instagram" class="button-icon" width="20" height="20">
+                            Insta
+                        </a>
+                    </div>
+                    <div class="button">
+                        <a href="https://www.linkedin.com/company/code-coffee-philadelphia" target="_blank" class="icon-button">
+                            <img src="media/social/linkedin.svg" alt="LinkedIn" class="button-icon" width="20" height="20">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-6" >
+                <img class="pure-img hide-mobile" src="media/misc/computer.png" draggable="false">
+            </div>
+            <div class="pure-u-1-5"></div>
+        </section>
+        <section id="true-footer">
+            <p style="text-align: center;">
+                <span style="user-select: none;">
+                    <br /><br />
+                    code & coffee philadelphia is a node of <a href="https://socratica.info" target="_blank">socratica</a> and <a href="https://codeandcoffee.org/" target="_blank">code & coffee</a><br />
+                    <br />
+                </span>
+            </p>
+        </section>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #E9E3DC; z-index: 1000; flex-direction: column; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; overflow-y: auto;">
+            <button id="mobile-menu-close" style="position: absolute; top: 70px; right: 20px; background-color: rgba(255,255,255,0.8); border: 2px solid #3B2521; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 24px; color: #3B2521; display: flex; align-items: center; justify-content: center; z-index: 1002;" aria-label="Close menu">✕</button>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 40px; width: 100%;">
+                <div style="width: 100%; max-width: 250px; text-align: center;">
+                    <a href="index.html" style="display: block; padding: 12px 15px; border: 2px solid #59969B; border-radius: 5px; font-family: 'Gloria Hallelujah', sans-serif; color: #3B2521; text-decoration: none; font-size: 1.1rem; transition: all 0.2s ease;">Home</a>
+                </div>
+                <div style="width: 100%; max-width: 250px; text-align: center;">
+                    <a href="links.html" style="display: block; padding: 12px 15px; border: 2px solid #59969B; border-radius: 5px; font-family: 'Gloria Hallelujah', sans-serif; color: #3B2521; text-decoration: none; font-size: 1.1rem; transition: all 0.2s ease;">Links</a>
+                </div>
+                <div style="width: 100%; max-width: 250px; text-align: center;">
+                    <a href="project-request.html" style="display: block; padding: 12px 15px; border: 2px solid #59969B; border-radius: 5px; font-family: 'Gloria Hallelujah', sans-serif; color: #3B2521; text-decoration: none; font-size: 1.1rem; transition: all 0.2s ease;">Project Request</a>
+                </div>
+                <div style="width: 100%; max-width: 250px; text-align: center;">
+                    <a href="talent-matchboard.html" style="display: block; padding: 12px 15px; border: 2px solid #59969B; border-radius: 5px; font-family: 'Gloria Hallelujah', sans-serif; color: #3B2521; text-decoration: none; font-size: 1.1rem; transition: all 0.2s ease;">Tech Talent Matchboard</a>
+                </div>
+                <div style="width: 100%; max-width: 250px; text-align: center;">
+                    <a href="event-sponsorship.html" style="display: block; padding: 12px 15px; border: 2px solid #59969B; border-radius: 5px; font-family: 'Gloria Hallelujah', sans-serif; color: #3B2521; text-decoration: none; font-size: 1.1rem; transition: all 0.2s ease;">Event Sponsorship</a>
+                </div>
+                <div style="width: 100%; max-width: 250px; text-align: center;">
+                    <a href="blog-ptw-hackathon.html" style="display: block; padding: 12px 15px; border: 2px solid #59969B; border-radius: 5px; font-family: 'Gloria Hallelujah', sans-serif; color: #3B2521; text-decoration: none; font-size: 1.1rem; transition: all 0.2s ease;">PTW Hackathon</a>
+                </div>
+                <div style="width: 100%; max-width: 250px; text-align: center;">
+                    <a href="https://nol-kky-shop.fourthwall.com/" target="_blank" style="display: block; padding: 12px 15px; border: 2px solid #59969B; border-radius: 5px; font-family: 'Gloria Hallelujah', sans-serif; color: #3B2521; text-decoration: none; font-size: 1.1rem; transition: all 0.2s ease;">Merch</a>
+                </div>
+                <div style="width: 100%; max-width: 250px; text-align: center;">
+                    <a href="https://hcb.hackclub.com/donations/start/code-and-coffee-philadelphia" target="_blank" style="display: block; padding: 12px 15px; border: 2px solid #59969B; border-radius: 5px; font-family: 'Gloria Hallelujah', sans-serif; color: #3B2521; text-decoration: none; font-size: 1.1rem; transition: all 0.2s ease;">Community Fund</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu functionality -->
+        <script src="./menu.js"></script>
+    </body>
+</html>
