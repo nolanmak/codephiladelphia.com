@@ -14,6 +14,53 @@
 
         <link rel="stylesheet" href="./global.css" />
         <link rel="stylesheet" href="./index.css" />
+
+        <!-- Hover effects for carousel elements -->
+        <style>
+            #carousel-slides .slide a img {
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+            
+            #carousel-slides .slide a:hover img {
+                transform: scale(1.02);
+                filter: brightness(1.1);
+            }
+            
+            #carousel-indicators button.indicator:hover {
+                background-color: white !important;
+                transform: scale(1.3) !important;
+            }
+            
+            #prev-btn:hover, #next-btn:hover {
+                background-color: rgba(255, 255, 255, 0.9) !important;
+                transform: scale(1.1);
+            }
+            
+            #carousel-captions a:hover {
+                text-decoration: underline !important;
+                color: #f0f0f0 !important;
+            }
+            
+            /* Cursor changes to indicate clickable elements */
+            #carousel-slides .slide a, 
+            #carousel-captions a, 
+            #carousel-indicators a,
+            #prev-btn, #next-btn {
+                cursor: pointer;
+            }
+
+            #carousel-captions a {
+                transition: background-color 0.3s ease, color 0.3s ease;
+                padding: 5px;
+                border-radius: 4px;
+            }
+            
+            #carousel-captions a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #f0f0f0 !important;
+                text-decoration: none !important;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -110,33 +157,86 @@
                             <button id="prev-btn" style="background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 18px; color: #3B2521;">❮</button>
                             
                             <div id="carousel-indicators" style="display: flex; gap: 8px;">
-                                <button class="indicator" data-slide="0" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; border: none; cursor: pointer; transform: scale(1.2);"></button>
-                                <button class="indicator" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                                <button class="indicator" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                                <button class="indicator" data-slide="3" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                                <button class="indicator" data-slide="4" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                                <button class="indicator" data-slide="5" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                                <button class="indicator" data-slide="6" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                                <button class="indicator" data-slide="7" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
-                                <button class="indicator" data-slide="8" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                <a href="https://www.codephiladelphia.com/blog-ptw-hackathon.html" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="0" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; border: none; cursor: pointer; transform: scale(1.2);"></button>
+                                </a>
+                                <a href="https://www.codephiladelphia.com/project-request.html" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                </a>
+                                <a href="https://www.codephiladelphia.com/talent-matchboard.html" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                </a>
+                                <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="3" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                </a>
+                                <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="4" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                </a>
+                                <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="5" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                </a>
+                                <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="6" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                </a>
+                                <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="7" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                </a>
+                                <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none;">
+                                    <button class="indicator" data-slide="8" style="width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); border: none; cursor: pointer;"></button>
+                                </a>
                             </div>
                             
                             <button id="next-btn" style="background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 18px; color: #3B2521;">❯</button>
                         </div>
                     </div>
                     
-                    <!-- Caption container (below image and controls) -->
-                    <div id="carousel-captions" style="width: 100%; max-width: 600px; background-color: #3B2521; color: white; padding: 15px; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); min-height: 50px; font-size: 1.1rem; display: flex; justify-content: center; align-items: center;">
-                        <div class="caption" data-slide="0" style="display: block; width: 100%; text-align: center;">Code & Coffee 2025 Philly Tech Week Hackathon at Comcast Lift Labs</div>
-                        <div class="caption" data-slide="1" style="display: none; width: 100%; text-align: center;">Have a project idea but need help bringing it to life? We can help turn your vision into reality.</div>
-                                          <div class="caption" data-slide="6" style="display: none; width: 100%; text-align: center;">Tap into the Code & Coffee Philly Community of +1,600 devs for employment opportunities</div>
-                        <div class="caption" data-slide="2" style="display: none; width: 100%; text-align: center;">AI Paper Talks: Discussing cutting-edge research</div>
-                        <div class="caption" data-slide="3" style="display: none; width: 100%; text-align: center;">Founder Coworking: Building the next big thing together</div>
-                        <div class="caption" data-slide="4" style="display: none; width: 100%; text-align: center;">LeetCode Practice: Sharpening coding skills together</div>
-                        <div class="caption" data-slide="5" style="display: none; width: 100%; text-align: center;">ML System Design: Architecting intelligent solutions</div>
-                        <div class="caption" data-slide="7" style="display: none; width: 100%; text-align: center;">Web3 Workshops: Exploring blockchain and decentralized apps</div>
-                        <div class="caption" data-slide="8" style="display: none; width: 100%; text-align: center;">Weekend Coding Sessions: Building projects together</div>
+                    <!-- Caption container with properly styled clickable captions -->
+                    <div id="carousel-captions" style="width: 100%; max-width: 600px; background-color: #3B2521; color: white; padding: 0; text-align: center; font-family: 'Gloria Hallelujah', sans-serif; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); min-height: 50px; font-size: 1.1rem; position: relative;">
+                        <a href="https://www.codephiladelphia.com/blog-ptw-hackathon.html" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="0" style="display: block;">Code & Coffee 2025 Philly Tech Week Hackathon at Comcast Lift Labs</div>
+                        </a>
+                        <a href="https://www.codephiladelphia.com/project-request.html" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="1" style="display: none;">Have a project idea but need help bringing it to life? We can help turn your vision into reality.</div>
+                        </a>
+                        <a href="https://www.codephiladelphia.com/talent-matchboard.html" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="2" style="display: none;">Tap into the Code & Coffee Philly Community of +1,600 devs for employment opportunities</div>
+                        </a>
+                        <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="3" style="display: none;">AI Paper Talks: Discussing cutting-edge research</div>
+                        </a>
+                        <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="4" style="display: none;">Founder Coworking: Building the next big thing together</div>
+                        </a>
+                        <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="5" style="display: none;">LeetCode Practice: Sharpening coding skills together</div>
+                        </a>
+                        <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="6" style="display: none;">ML System Design: Architecting intelligent solutions</div>
+                        </a>
+                        <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="7" style="display: none;">Web3 Workshops: Exploring blockchain and decentralized apps</div>
+                        </a>
+                        <a href="https://www.meetup.com/code-coffee-philly/" style="text-decoration: none; color: white; width: 100%; display: block; text-align: center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 15px; border-radius: 8px; transition: background-color 0.3s ease, color 0.3s ease;">
+                            <div class="caption" data-slide="8" style="display: none;">Weekend Coding Sessions: Building projects together</div>
+                        </a>
                     </div>
+
+                    <!-- Update the hover style for caption links -->
+                    <style>
+                        #carousel-captions {
+                            height: auto;
+                            overflow: hidden;
+                        }
+                        
+                        #carousel-captions a {
+                            transition: background-color 0.3s ease, color 0.3s ease;
+                        }
+                        
+                        #carousel-captions a:hover {
+                            background-color: rgba(255, 255, 255, 0.1);
+                            color: #f0f0f0 !important;
+                        }
+                    </style>
                 </div>
             </div>
             <div id="splash">
@@ -384,6 +484,9 @@
                             indicator.style.transform = 'scale(1)';
                         }
                     });
+
+                    // Update caption container height
+                    updateCaptionHeight();
                 }
 
                 // Function to go to the next slide
@@ -457,6 +560,15 @@
                         prevSlide();
                     }
                     startAutoRotation(); // Reset timer after swipe
+                }
+
+                // Function to update caption container height
+                function updateCaptionHeight() {
+                    const activeCaption = document.querySelector('#carousel-captions .caption[style*="display: block"]');
+                    if (activeCaption) {
+                        const captionHeight = activeCaption.offsetHeight;
+                        document.getElementById('carousel-captions').style.height = (captionHeight + 30) + 'px'; // 30px for padding
+                    }
                 }
 
                 // Show first slide and start the carousel
