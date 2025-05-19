@@ -61,81 +61,6 @@
                 text-decoration: none !important;
             }
         </style>
-
-        <!-- Update the caption styles to ensure perfect centering and proper text fitting -->
-        <style>
-            /* Updated styles for captions */
-            #carousel-captions {
-                width: 100%;
-                max-width: 600px;
-                background-color: #3B2521;
-                color: white;
-                padding: 0;
-                font-family: 'Gloria Hallelujah', sans-serif;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                min-height: 50px;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            #carousel-captions a {
-                text-decoration: none;
-                color: white;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                padding: 20px;
-                border-radius: 8px;
-                transition: background-color 0.3s ease, color 0.3s ease;
-            }
-            
-            #carousel-captions a:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-                color: #f0f0f0 !important;
-            }
-            
-            #carousel-captions .caption {
-                width: 100%;
-                line-height: 1.4;
-                margin: 0 auto;
-                padding: 0;
-                max-width: 90%; /* Ensure text doesn't get too close to the edges */
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            /* Responsive font sizing */
-            @media (min-width: 768px) {
-                #carousel-captions .caption {
-                    font-size: 1.05rem;
-                }
-            }
-            
-            @media (max-width: 767px) {
-                #carousel-captions .caption {
-                    font-size: 0.9rem;
-                }
-            }
-            
-            @media (max-width: 480px) {
-                #carousel-captions .caption {
-                    font-size: 0.8rem;
-                    max-width: 95%;
-                }
-                #carousel-captions a {
-                    padding: 10px;
-                }
-            }
-        </style>
     </head>
     <body>
         <header>
@@ -266,100 +191,33 @@
                     </div>
                     
                     <!-- Caption container with properly styled clickable captions -->
-                    <style>
-                        /* Updated styles for captions */
-                        #carousel-captions {
-                            width: 100%;
-                            max-width: 600px;
-                            background-color: #3B2521;
-                            color: white;
-                            padding: 0;
-                            font-family: 'Gloria Hallelujah', sans-serif;
-                            border-radius: 8px;
-                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                            min-height: 50px;
-                            position: relative;
-                            overflow: hidden;
-                        }
-                        
-                        #carousel-captions a {
-                            text-decoration: none;
-                            color: white;
-                            width: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            text-align: center;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                            padding: 15px 25px;
-                            border-radius: 8px;
-                            transition: background-color 0.3s ease, color 0.3s ease;
-                        }
-                        
-                        #carousel-captions a:hover {
-                            background-color: rgba(255, 255, 255, 0.1);
-                            color: #f0f0f0 !important;
-                        }
-                        
-                        #carousel-captions .caption {
-                            width: 100%;
-                            line-height: 1.4;
-                        }
-                        
-                        /* Responsive font sizing */
-                        @media (min-width: 768px) {
-                            #carousel-captions .caption {
-                                font-size: 1.1rem;
-                            }
-                        }
-                        
-                        @media (max-width: 767px) {
-                            #carousel-captions .caption {
-                                font-size: 0.95rem;
-                            }
-                        }
-                        
-                        @media (max-width: 480px) {
-                            #carousel-captions .caption {
-                                font-size: 0.85rem;
-                            }
-                            #carousel-captions a {
-                                padding: 12px 15px;
-                            }
-                        }
-                    </style>
-
-                    <div id="carousel-captions">
-                        <a href="https://www.codephiladelphia.com/blog-ptw-hackathon.html">
-                            <div class="caption" data-slide="0" style="display: block;">Code & Coffee 2025 Philly Tech Week Hackathon at Comcast Lift Labs</div>
+                    <div id="carousel-captions" style="width: 100%; max-width: 600px; height: 80px; position: relative; margin-top: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); overflow: hidden;">
+                        <a href="https://www.codephiladelphia.com/blog-ptw-hackathon.html" class="caption-button active" data-slide="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: flex; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">Code & Coffee 2025 Philly Tech Week Hackathon at Comcast Lift Labs</span>
                         </a>
-                        <a href="https://www.codephiladelphia.com/project-request.html">
-                            <div class="caption" data-slide="1" style="display: none;">Have a project idea but need help bringing it to life? We can help turn your vision into reality.</div>
+                        <a href="https://www.codephiladelphia.com/project-request.html" class="caption-button" data-slide="1" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: none; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">Have a project idea but need help bringing it to life? We can help turn your vision into reality.</span>
                         </a>
-                        <a href="https://www.codephiladelphia.com/talent-matchboard.html">
-                            <div class="caption" data-slide="2" style="display: none;">Tap into the Code & Coffee Philly Community of +1,600 devs for employment opportunities</div>
+                        <a href="https://www.codephiladelphia.com/talent-matchboard.html" class="caption-button" data-slide="2" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: none; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">Tap into the Code & Coffee Philly Community of +1,600 devs for employment opportunities</span>
                         </a>
-                        <a href="https://www.meetup.com/code-coffee-philly/">
-                            <div class="caption" data-slide="3" style="display: none;">AI Paper Talks: Discussing cutting-edge research</div>
+                        <a href="https://www.meetup.com/code-coffee-philly/" class="caption-button" data-slide="3" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: none; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">AI Paper Talks: Discussing cutting-edge research</span>
                         </a>
-                        <a href="https://www.meetup.com/code-coffee-philly/">
-                            <div class="caption" data-slide="4" style="display: none;">Founder Coworking: Building the next big thing together</div>
+                        <a href="https://www.meetup.com/code-coffee-philly/" class="caption-button" data-slide="4" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: none; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">Founder Coworking: Building the next big thing together</span>
                         </a>
-                        <a href="https://www.meetup.com/code-coffee-philly/">
-                            <div class="caption" data-slide="5" style="display: none;">LeetCode Practice: Sharpening coding skills together</div>
+                        <a href="https://www.meetup.com/code-coffee-philly/" class="caption-button" data-slide="5" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: none; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">LeetCode Practice: Sharpening coding skills together</span>
                         </a>
-                        <a href="https://www.meetup.com/code-coffee-philly/">
-                            <div class="caption" data-slide="6" style="display: none;">ML System Design: Architecting intelligent solutions</div>
+                        <a href="https://www.meetup.com/code-coffee-philly/" class="caption-button" data-slide="6" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: none; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">ML System Design: Architecting intelligent solutions</span>
                         </a>
-                        <a href="https://www.meetup.com/code-coffee-philly/">
-                            <div class="caption" data-slide="7" style="display: none;">Web3 Workshops: Exploring blockchain and decentralized apps</div>
+                        <a href="https://www.meetup.com/code-coffee-philly/" class="caption-button" data-slide="7" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: none; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">Web3 Workshops: Exploring blockchain and decentralized apps</span>
                         </a>
-                        <a href="https://www.meetup.com/code-coffee-philly/">
-                            <div class="caption" data-slide="8" style="display: none;">Weekend Coding Sessions: Building projects together</div>
+                        <a href="https://www.meetup.com/code-coffee-philly/" class="caption-button" data-slide="8" style="position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: #3B2521; border: none; padding: 0 20px; color: white; font-family: 'Gloria Hallelujah', sans-serif; font-size: 1rem; text-align: center; display: none; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#4a322c'" onmouseout="this.style.backgroundColor='#3B2521'">
+                            <span class="caption-text" style="width: 100%; max-width: 90%; text-align: center; display: block;">Weekend Coding Sessions: Building projects together</span>
                         </a>
                     </div>
                 </div>
@@ -563,7 +421,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const slides = document.querySelectorAll('#carousel-slides .slide');
-                const captions = document.querySelectorAll('#carousel-captions .caption');
+                const captions = document.querySelectorAll('#carousel-captions .caption-button');
                 const indicators = document.querySelectorAll('#carousel-indicators .indicator');
                 const prevButton = document.getElementById('prev-btn');
                 const nextButton = document.getElementById('next-btn');
@@ -593,7 +451,7 @@
                     // Update captions
                     captions.forEach((caption, i) => {
                         if (i === currentIndex) {
-                            caption.style.display = 'block';
+                            caption.style.display = 'flex';
                         } else {
                             caption.style.display = 'none';
                         }
@@ -609,9 +467,6 @@
                             indicator.style.transform = 'scale(1)';
                         }
                     });
-
-                    // Update caption container height
-                    updateCaptionHeight();
                 }
 
                 // Function to go to the next slide
@@ -685,16 +540,6 @@
                         prevSlide();
                     }
                     startAutoRotation(); // Reset timer after swipe
-                }
-
-                // Function to update caption container height
-                function updateCaptionHeight() {
-                    const activeCaption = document.querySelector('#carousel-captions .caption[style*="display: block"]');
-                    if (activeCaption) {
-                        const captionHeight = activeCaption.offsetHeight;
-                        // Add extra padding to ensure content fits completely
-                        document.getElementById('carousel-captions').style.height = (captionHeight + 50) + 'px';
-                    }
                 }
 
                 // Show first slide and start the carousel
