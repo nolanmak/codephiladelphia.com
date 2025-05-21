@@ -93,6 +93,14 @@ p { line-height: 1.5rem; }
     text-decoration: none;
 }
 
+/* Style for active navigation link */
+.nav-link.active {
+    background-color: rgba(59, 37, 33, 0.1);
+    font-weight: bold;
+    border-bottom: 2px solid #3B2521;
+    pointer-events: auto; /* Ensure link remains clickable */
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
     .hide-mobile { 
