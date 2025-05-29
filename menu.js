@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const desktopNav = document.getElementById('desktop-nav');
     const body = document.body;
     
-    // Function to check screen size and adjust menu visibility
+    // Function to check screen size and adjust menu visibilitys
     function checkScreenSize() {
         if (window.innerWidth <= 1300) {
             // Mobile view
